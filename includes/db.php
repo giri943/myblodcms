@@ -1,9 +1,16 @@
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dataBase="myblog";
+//Remote DB connection
+$servername = "remotemysql.com";
+$username = "tVX10USt5C";
+$password = "IKtIqo4r2t";
+$dataBase="tVX10USt5C";
+
+//Dev DB Connection
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dataBase="myblog";
 
 // Create connection
 $db = mysqli_connect($servername, $username, $password,$dataBase);
