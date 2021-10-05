@@ -4,10 +4,10 @@ if(isset($_SESSION['isUserLoggedIn']) && $_SESSION['isUserLoggedIn']){
   header('Location:index.php');
 }
 if(isset($_POST['login'])){
-$email=mysqli_real_escape_string($connection,$_POST['email']);
-$password=mysqli_real_escape_string($connection,$_POST['password']);
+$email=mysqli_real_escape_string($db,$_POST['email']);
+$password=mysqli_real_escape_string($db,$_POST['password']);
 $query="SELECT * FROM admin WHERE email='$email' AND password='$password'";
-$runQuery=mysqli_query($connection,$query);
+$runQuery=mysqli_query($db,$query);
 if(mysqli_num_rows($runQuery)){
 $_SESSION['isUserLoggedIn']=true;
 $_SESSION['email']=$email;
